@@ -85,7 +85,7 @@ def part_2_solution(file_path: str) -> int:
         return {p for p, _ in seen}, (position, direction) in seen
 
     path = recurse(lab_map)[0]
-    return sum(recurse(lab_map | {o: '#'})[1] for o in path)
+    return sum(recurse(lab_map | {o: '#'})[1] for o in path if o != start)
 
 
 if __name__ == "__main__":
